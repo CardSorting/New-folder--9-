@@ -2,11 +2,11 @@
 
 
 a = Analysis(
-    ['claude_voice.py'],
+    ['egg_voice_gui.py'],
     pathex=[],
     binaries=[],
-    datas=[],
-    hiddenimports=['spacy'],
+    datas=[('assets', 'assets')],
+    hiddenimports=[],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -29,11 +29,17 @@ exe = EXE(
     upx=True,
     upx_exclude=[],
     runtime_tmpdir=None,
-    console=True,
+    console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['icon.ico'],
+    icon=['assets/icon.ico'],
+)
+app = BUNDLE(
+    exe,
+    name='EggVoiceTerminal.app',
+    icon='assets/icon.ico',
+    bundle_identifier=None,
 )

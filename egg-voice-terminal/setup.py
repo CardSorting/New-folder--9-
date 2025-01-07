@@ -8,12 +8,24 @@ setup(
         'openai',
         'SpeechRecognition',
         'pyttsx3',
-        'python-dotenv'
+        'python-dotenv',
+        'PyQt5',
+        'pyinstaller',
+        'pywin32'
     ],
     entry_points={
-        'console_scripts': [
-            'egg-voice=claude_voice:main',
+        'gui_scripts': [
+            'egg-voice=egg_voice_gui:main',
         ],
+    },
+    options={
+        'build_exe': {
+            'include_files': [
+                ('egg-voice-terminal/assets/', 'assets/')
+            ],
+            'packages': ['PyQt5', 'speech_recognition', 'pyttsx3'],
+            'excludes': ['tkinter']
+        }
     },
     python_requires='>=3.8',
 )

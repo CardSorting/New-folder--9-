@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+         xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+  <Identity Name="EggVoiceTerminal"
+            Publisher="CN=YourPublisher"
+            Version="1.0.0.0" />
+            
+  <Properties>
+    <DisplayName>Egg Voice Terminal</DisplayName>
+    <PublisherDisplayName>Your Company</PublisherDisplayName>
+    <Logo>assets\StoreLogo.png</Logo>
+  </Properties>
+  
+  <Resources>
+    <Resource Language="en-US" />
+  </Resources>
+  
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.16299.0" MaxVersionTested="10.0.19041.0" />
+  </Dependencies>
+  
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <uap:Capability Name="microphone" />
+  </Capabilities>
+  
+  <Applications>
+    <Application Id="App"
+                 Executable="EggVoiceTerminal.exe"
+                 EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="Egg Voice Terminal"
+                          Description="Voice-controlled terminal interface"
+                          BackgroundColor="transparent"
+                          Square150x150Logo="assets\Square150x150Logo.png"
+                          Square44x44Logo="assets\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="assets\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="assets\SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+</Package>
