@@ -2,14 +2,19 @@
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
          xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
          xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
-  <Identity Name="EggVoiceTerminal"
+  <Identity Name="12345YourCompany.EggVoiceTerminal"
             Publisher="CN=YourPublisher"
-            Version="1.0.0.0" />
+            Version="1.0.0.0"
+            ProcessorArchitecture="x64" />
             
   <Properties>
     <DisplayName>Egg Voice Terminal</DisplayName>
     <PublisherDisplayName>Your Company</PublisherDisplayName>
+    <PrivacyUri>https://yourcompany.com/privacy</PrivacyUri>
     <Logo>assets\StoreLogo.png</Logo>
+    <StoreLogo>assets\StoreLogo.png</StoreLogo>
+    <Description>Voice-controlled terminal interface for Windows</Description>
+    <SupportUri>https://yourcompany.com/support</SupportUri>
   </Properties>
   
   <Resources>
@@ -23,7 +28,16 @@
   <Capabilities>
     <Capability Name="internetClient" />
     <uap:Capability Name="microphone" />
+    <rescap:Capability Name="runFullTrust" />
   </Capabilities>
+  
+  <Extensions>
+    <uap:Extension Category="windows.appExecutionAlias">
+      <uap:AppExecutionAlias>
+        <uap:ExecutionAlias Alias="eggt.exe" />
+      </uap:AppExecutionAlias>
+    </uap:Extension>
+  </Extensions>
   
   <Applications>
     <Application Id="App"
@@ -33,7 +47,15 @@
                           Description="Voice-controlled terminal interface"
                           BackgroundColor="transparent"
                           Square150x150Logo="assets\Square150x150Logo.png"
-                          Square44x44Logo="assets\Square44x44Logo.png">
+                          Square44x44Logo="assets\Square44x44Logo.png"
+                          Square71x71Logo="assets\Square71x71Logo.png"
+                          Square310x310Logo="assets\Square310x310Logo.png">
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+          <uap:Rotation Preference="portraitFlipped" />
+          <uap:Rotation Preference="landscapeFlipped" />
+        </uap:InitialRotationPreference>
         <uap:DefaultTile Wide310x150Logo="assets\Wide310x150Logo.png" />
         <uap:SplashScreen Image="assets\SplashScreen.png" />
       </uap:VisualElements>
