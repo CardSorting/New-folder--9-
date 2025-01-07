@@ -1,0 +1,7 @@
+setup.py
+egg_voice_terminal.egg-info/PKG-INFO
+egg_voice_terminal.egg-info/SOURCES.txt
+egg_voice_terminal.egg-info/dependency_links.txt
+egg_voice_terminal.egg-info/entry_points.txt
+egg_voice_terminal.egg-info/requires.txt
+egg_voice_terminal.egg-info/top_level.txt

@@ -1,0 +1,2 @@
+[console_scripts]
+egg-voice = claude_voice:main
